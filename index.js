@@ -14,5 +14,6 @@ module.exports = {
     isPromise: require('./src/isPromise'),
     indent: require('./src/indent'),
     logError: require('./src/logError'),
+    once: require('./src/once'),
     pretty: require('./src/pretty'),
 };
