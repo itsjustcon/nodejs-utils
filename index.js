@@ -10,6 +10,7 @@ module.exports = {
     DeferredPromise: require('./src/promise-deferred'),
     definePassthrough: require('./src/define-passthrough'),
     file: require('./src/file'),
+    getImports: require('./src/getImports'),
     Hooks: require('./src/hooks'),
     isObservable: require('./src/isObservable'),
     isPlainObject: require('./src/isPlainObject'),
