@@ -7,6 +7,7 @@
  */
 
 module.exports = {
+    DeferredPromise: require('./src/promise-deferred'),
     file: require('./src/file'),
     isObservable: require('./src/isObservable'),
     isPlainObject: require('./src/isPlainObject'),
