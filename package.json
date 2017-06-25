@@ -1,0 +1,36 @@
+{
+  "name": "@itsjustcon/utils",
+  "version": "1.0.0",
+  "description": "A collection of personal Node.js utils I find myself importing into almost every new project",
+  "main": "index.js",
+  "author": "Connor Grady <conair360@gmail.com> (http://connorgrady.com/)",
+  "homepage": "https://github.com/itsjustcon/nodejs-utils",
+  "repository": "itsjustcon/nodejs-utils",
+  "bugs": {
+    "url": "https://github.com/itsjustcon/nodejs-utils/issues"
+  },
+  "license": "MIT",
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "keywords": [
+    "utility"
+  ],
+  "dependencies": {
+    "bluebird": "^3.0.0",
+    "chalk": "^1.0.0",
+    "lodash": "^3.0.0",
+    "supports-color": "^4.0.0"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "chai": "^4.0.0",
+    "mocha": "^3.0.0",
+    "sinon": "^2.0.0",
+    "sinon-chai": "^2.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
