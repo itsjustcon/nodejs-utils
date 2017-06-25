@@ -12,5 +12,6 @@ module.exports = {
     isPlainObject: require('./src/isPlainObject'),
     isPromise: require('./src/isPromise'),
     indent: require('./src/indent'),
+    logError: require('./src/logError'),
     pretty: require('./src/pretty'),
 };
