@@ -5,3 +5,9 @@
  *
  * @flow
  */
+
+const file = require('./src/file');
+
+module.exports = {
+    file,
+};
