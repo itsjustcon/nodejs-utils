@@ -16,4 +16,5 @@ module.exports = {
     logError: require('./src/logError'),
     once: require('./src/once'),
     pretty: require('./src/pretty'),
+    promisifyEvent: require('./src/promisifyEvent'),
 };
