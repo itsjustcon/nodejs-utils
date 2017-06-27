@@ -1,6 +1,6 @@
 {
   "name": "@itsjustcon/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of personal Node.js utils I find myself importing into almost every new project",
   "main": "index.js",
   "author": "Connor Grady <conair360@gmail.com> (http://connorgrady.com/)",
