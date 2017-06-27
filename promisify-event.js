@@ -19,7 +19,7 @@ function promisifyEvent(emitter/*: EventEmitter*/, event/*: string|Array<string>
 
     let events/*:Array<string>*/ = [];
     if (arguments.length > 1) {
-        for (const i = 1, arg = arguments[i]; i < arguments.length; i++) {
+        for (let i = 1, arg = arguments[i]; i < arguments.length; i++) {
             if (isPlainObject(arg)) {
                 options = arg;
                 break;
@@ -49,7 +49,7 @@ function promisifyEvent(emitter/*: EventEmitter*/, event/*: string|Array<string>
     const listeners = {};
 
     addListeners = once(() => {
-        for (const i = 0; i < events.length; i++) {
+        for (let i = 0; i < events.length; i++) {
             const eventName = events[i];
             //emitter.once(eventName, listener.bind(null, eventName));
             listeners[eventName] = listener.bind(null, eventName);
