@@ -11,7 +11,7 @@ const Promise = require('bluebird');
 const isPromise = require('./isPromise');
 const once = require('./once');
 
-/*:
+/*::
 type Hook$handler = (object: object, next: (error:?Error) => void, reschedule: (reason:?string) => void) => ?Promise
 //type Hook$handler<T> = (object: T, next: (error:?Error) => void, reschedule: (reason:?string) => void) => ?Promise
 */
