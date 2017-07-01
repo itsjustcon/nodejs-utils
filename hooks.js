@@ -86,8 +86,6 @@ module.exports = Hooks;
 function execHandlers(handlers/*: Array<Hook$handler>*/, arg/*: ?any*/) /*: Promise*/ {
     if (handlers == void 0 || handlers.length === 0)
         return Promise.resolve();
-    if (!Array.isArray(args))
-        args = (args == void 0) ? [] : [ args ];
     const asyncPromises = [], rescheduledHandlers = [];
     return Promise
         .each(handlers, (handler) => {
@@ -119,6 +117,6 @@ function execHandlers(handlers/*: Array<Hook$handler>*/, arg/*: ?any*/) /*: Prom
             } else return;
         })
         .then(() => Promise.all(asyncPromises))
-        .then(() => execHandlers(rescheduledHandlers, args))
+        .then(() => execHandlers(rescheduledHandlers, arg))
         .return()
 }
