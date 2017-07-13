@@ -11,6 +11,8 @@ const Promise = require('bluebird');
 const isPromise = require('./isPromise');
 const once = require('./once');
 
+const debug = require('debug')('hooks.js');
+
 /*::
 type Hook$handler = (object: object, next: (error:?Error) => void, reschedule: (reason:?string) => void) => ?Promise
 //type Hook$handler<T> = (object: T, next: (error:?Error) => void, reschedule: (reason:?string) => void) => ?Promise
@@ -89,7 +91,7 @@ function execHandlers(handlers/*: Array<Hook$handler>*/, arg/*: ?any*/) /*: Prom
     const asyncPromises = [], rescheduledHandlers = [];
     return Promise
         .each(handlers, (handler) => {
-            console.log(handler.name);
+            debug(handler.name+'()');
             let next, reschedule;
             const next$promise = Promise.fromCallback((callback) => next = once(callback));
             //const reschedule$promise = new Promise((resolve) => reschedule = once(resolve));
@@ -101,7 +103,7 @@ function execHandlers(handlers/*: Array<Hook$handler>*/, arg/*: ?any*/) /*: Prom
             //    )
             const reschedule$promise = new Promise((resolve, reject) => {
                 reschedule = once((reason/*: ?string*/) => {
-                    console.log(`reschedule() ${handler.name}: ${reason}`);
+                    debug(`reschedule() ${handler.name}: ${reason}`);
                     if (handler.length === 1) {
                         reject(new Error(`Cannot reschedule hook handler if it is the only handler left to execute! ${handler.name || '<<Anonymous Handler>>'}` + (reason ? `: ${reason}` : '')));
                     } else {
